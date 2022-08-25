@@ -1,5 +1,16 @@
 class QuickSort
 
+  def self.execute(pair_array, start, end_index, number_of_cycles = 0)
+    number_of_cycles += 1
+    if start < end_index
+      pivot = self.swap(pair_array, start, end_index)
+
+      number_of_cycles =  self.execute(pair_array, start, pivot - 1, number_of_cycles)
+      number_of_cycles = self.execute(pair_array, pivot + 1, end_index, number_of_cycles)
+    end
+    number_of_cycles
+  end
+
   private
 
   # This function swaps elements in a pair array to arrange all elements that are greater to the left and
@@ -11,7 +22,7 @@ class QuickSort
   #
   # The overall time complexity for this part of the algorithm is O(n), depending on the size of the portion of the array
   # located in between start and end_index
-  def swap(pair_array, start, end_index)
+  def self.swap(pair_array, start, end_index)
     swap_index = nil
     pivot = end_index
     number_of_cycles = 0
