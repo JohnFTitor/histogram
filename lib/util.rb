@@ -1,5 +1,10 @@
 class QuickSort
 
+  # This recursive algorithm swaps all portions of the array required to be swaped
+  # Starts by checking whether the start and end_index overlaps. If not, then it proceeds to execute
+  # First, swaps the elements in the array using the helper function, and returns its pivot
+  # Once it gets the pivot, it makes a recursive call with the two other halfs of the array.
+  # This result in a complete array sorting with an average case of nLog(n), and a worst case scenerario of 0(n^2)
   def self.execute(pair_array, start, end_index, number_of_cycles = 0)
     number_of_cycles += 1
     if start < end_index
