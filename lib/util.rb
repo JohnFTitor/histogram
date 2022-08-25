@@ -1,5 +1,4 @@
 class QuickSort
-
   # This recursive algorithm swaps all portions of the array required to be swaped
   # Starts by checking whether the start and end_index overlaps. If not, then it proceeds to execute
   # First, swaps the elements in the array using the helper function, and returns its pivot
@@ -8,25 +7,23 @@ class QuickSort
   def self.execute(pair_array, start, end_index, number_of_cycles = 0)
     if start < end_index
       number_of_cycles += 1
-      pivot = self.swap(pair_array, start, end_index)
+      pivot = swap(pair_array, start, end_index)
 
-      number_of_cycles =  self.execute(pair_array, start, pivot - 1, number_of_cycles)
-      number_of_cycles = self.execute(pair_array, pivot + 1, end_index, number_of_cycles)
+      number_of_cycles = execute(pair_array, start, pivot - 1, number_of_cycles)
+      number_of_cycles = execute(pair_array, pivot + 1, end_index, number_of_cycles)
     end
     number_of_cycles
   end
-
-  private
 
   # This function swaps elements in a pair array to arrange all elements that are greater to the left and
   # all elements that are smaller to the right.
   #
   # Starts by initializing an empty swap index which will be used to re-arrange elements while iterating over
-  # the pair array. When the first smaller element is found, it gets initialized to that element. If no smaller element is found, it will keep
-  # being nil and no swap will occur.
+  # the pair array. When the first smaller element is found, it gets initialized to that element.
+  # If no smaller element is found, it will keep being nil and no swap will occur.
   #
-  # The overall time complexity for this part of the algorithm is O(n), depending on the size of the portion of the array
-  # located in between start and end_index
+  # The overall time complexity for this part of the algorithm is O(n), depending on the size of the portion of
+  # the array located in between start and end_index
   def self.swap(pair_array, start, end_index)
     swap_index = nil
     pivot = end_index
@@ -60,7 +57,6 @@ class QuickSort
 end
 
 class Text
-
   def self.generate_word_count(text)
     # Starts by generating an array of words splited by separators using a regex
     arr_of_words = text.downcase.split(/[ ,.;\-_]+/)
@@ -80,11 +76,8 @@ class Text
     puts "The number of cycles to count the words was: #{number_of_cycles}"
     puts "This is equivalent to the size of the array of words which is: #{arr_of_words.length}"
 
-    sorted_count = self.sort_word_count(words_counted)
-    sorted_count
+    sort_word_count(words_counted)
   end
-
-  private
 
   def self.sort_word_count(word_count)
     pair_array = word_count.to_a
