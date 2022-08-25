@@ -6,8 +6,8 @@ class QuickSort
   # Once it gets the pivot, it makes a recursive call with the two other halfs of the array.
   # This result in a complete array sorting with an average case of nLog(n), and a worst case scenerario of 0(n^2)
   def self.execute(pair_array, start, end_index, number_of_cycles = 0)
-    number_of_cycles += 1
     if start < end_index
+      number_of_cycles += 1
       pivot = self.swap(pair_array, start, end_index)
 
       number_of_cycles =  self.execute(pair_array, start, pivot - 1, number_of_cycles)
@@ -54,15 +54,16 @@ class QuickSort
       pivot = swap_index
     end
 
-    puts "The number of cycles to swap elements during this call is: #{number_of_cycles}"
+    puts "The number of cycles required to swap elements during this call was: #{number_of_cycles}"
     pivot
   end
 end
 
 class Text
+
   def self.generate_word_count(text)
     # Starts by generating an array of words splited by separators using a regex
-    arr_of_words = text.split(/[ ,.;\-_]+/)
+    arr_of_words = text.downcase.split(/[ ,.;\-_]+/)
     words_counted = {}
     number_of_cycles = 0
 
@@ -76,8 +77,22 @@ class Text
       words_counted[word] += 1
     end
 
-    puts "The number of cycles to count the words is: #{number_of_cycles}"
+    puts "The number of cycles to count the words was: #{number_of_cycles}"
     puts "This is equivalent to the size of the array of words which is: #{arr_of_words.length}"
-    words_counted
+
+    sorted_count = self.sort_word_count(words_counted)
+    sorted_count
+  end
+
+  private
+
+  def self.sort_word_count(word_count)
+    pair_array = word_count.to_a
+
+    number_of_cycles = QuickSort.execute(pair_array, 0, pair_array.length - 1)
+
+    puts "The number of cycles required to sort the pairs was: #{number_of_cycles}"
+
+    pair_array
   end
 end
