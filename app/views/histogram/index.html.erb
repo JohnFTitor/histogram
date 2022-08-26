@@ -1,21 +1,27 @@
-<%= form_with url: histogram_index_path, method: :post do |f| %>
-  <div>
-    <%= f.label :text %>
-    <%= f.text_area :text, rows: "14" %>
-  </div>
-  <%= f.submit 'Generate graph from text' %>
-<% end %>
+<div class="container flex-column">
+  <div class="container spaced">
+    <%= form_with url: histogram_index_path, method: :post do |f| %>
+      <div class="field">
+        <%= f.label :text_input_area %>
+        <%= f.text_area :text, rows: "14", class: "text" %>
+      </div>
+      <%= f.submit 'Generate graph from text', class: "button" %>
+    <% end %>
 
-<%= form_with url: histogram_index_path, method: :post do |f| %>
-  <div>
-    <%= f.label :file %>
-    <%= f.file_field :file, accept: 'text/plain' %>
+    <%= form_with url: histogram_index_path, method: :post do |f| %>
+      <div class="field">
+        <%= f.label :file, "Add a text file", class: "file" %>
+        <span id="file-selected">No file has been uploaded</span>
+        <%= f.file_field :file, accept: 'text/plain' %>
+      </div>
+      <%= f.submit 'Generate graph from file', class: "button" %>
+    <% end %>
   </div>
-  <%= f.submit 'Generate graph from file' %>
-<% end %>
 
-<% if data.length > 0 %>
-  <%= bar_chart data, id: "bar-chart", colors: ["#000000", "#ff0000", "#013220", "#00008b", "#FFD700"], width: "80%", height: "#{data.length * 50}px" %>
-<% else %>
-  <p> No data found. Add some through the text input or upload a file! </p>
-<% end %>
+  <% if data.length > 0 %>
+    <%= bar_chart data, id: "bar-chart", colors: ["#000000", "#ff0000", "#013220", "#00008b", "#FFD700"], width: "90%", height: "#{data.length * 30}px" %>
+  <% else %>
+    <p class="info"> No data found. Add some through the text input or upload a file! </p>
+  <% end %>
+</div>
+
