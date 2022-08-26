@@ -1,5 +1,10 @@
 require_relative 'quicksort'
 
+# Summing all time complexity together, in the average case scenario (which is expected for a regular stream of data),
+# the complexity of the split function (O(n)), plus the complexity of the words counting (O(n)), plus the complexity of
+# the QuickSort algorithm (O(nLogn)), will result in O(2n + nLogn), which simplified in O(n(2 + logN)), removing the constants
+# will be O(nLogn) in the average case. In the worst case scenario (All words having the same quantity of counts), the time complexity will
+# be O(n^2)
 class Text
   def self.generate_word_count(text)
     # Starts by generating an array of words splited by separators using a regex
