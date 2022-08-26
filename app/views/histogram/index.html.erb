@@ -1,5 +1,13 @@
+<%= form_with url: histogram_index_path, method: :post do |f| %>
+  <div>
+    <%= f.label :text %>
+    <%= f.text_area :text, rows: "14" %>
+  </div>
+  <%= f.submit 'Generate graph' %>
+<% end %>
+
 <% if data.length > 0 %>
-  <%= bar_chart data, id: "bar-chart", colors: ["#000000", "#ff0000", "#013220", "#00008b", "#FFD700"], width: "80%", height: "#{data.length * 30}px" %>
+  <%= bar_chart data, id: "bar-chart", colors: ["#000000", "#ff0000", "#013220", "#00008b", "#FFD700"], width: "80%", height: "#{data.length * 50}px" %>
 <% else %>
   <p> No data found. Add some through the text input or upload a file! </p>
 <% end %>

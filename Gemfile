@@ -29,7 +29,7 @@ gem 'turbo-rails'
 gem 'stimulus-rails'
 
 # Generate graph bars
-gem "chartkick"
+gem 'chartkick'
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem 'jbuilder'
