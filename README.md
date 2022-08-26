@@ -75,7 +75,7 @@ If you have any issue setting up this project, don't hesitate to contact me with
 ## Next Steps
 
 - Optimizing the counting algorithm. There must be a better way to count the words and sort them on the go, without demanding too much time complexity
-- Add exception handling with direct user feedback. The app can be easily broken if you submit a file that is not of type .txt or no file at all, which is not suitable. Providing error handling and flash messages can do so the users has a better experience
+- Add exception handling with direct user feedback. The app can be easily broken if you submit a file that is not of type .txt or no file at all, which is not suitable. Providing error handling and flash messages can do so the users have a better experience
 - Create a better chart. Due to the nature of the external gem, there are some issues when the input file has many unique words, since its size is not responsive at all. Creating a chart by hand could provide more flexibility on this end
 
 ## Authors
