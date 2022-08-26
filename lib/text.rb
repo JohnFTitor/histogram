@@ -3,7 +3,7 @@ require_relative 'quicksort'
 class Text
   def self.generate_word_count(text)
     # Starts by generating an array of words splited by separators using a regex
-    arr_of_words = text.downcase.split(/[ ,.;\-_\r\n]+/)
+    arr_of_words = text.downcase.split(/[ ,.;\-_\r\n"'¿?!¡()\[\]:]+/)
     words_counted = {}
     number_of_cycles = 0
 
