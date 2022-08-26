@@ -1,1 +1,5 @@
-<%= bar_chart @data, id: "bar-chart", colors: ["#000000", "#ff0000", "#013220", "#00008b", "#FFD700"], width: "80%", height: "#{@data.length * 30}px" %>
+<% if data.length > 0 %>
+  <%= bar_chart data, id: "bar-chart", colors: ["#000000", "#ff0000", "#013220", "#00008b", "#FFD700"], width: "80%", height: "#{data.length * 30}px" %>
+<% else %>
+  <p> No data found. Add some through the text input or upload a file! </p>
+<% end %>
