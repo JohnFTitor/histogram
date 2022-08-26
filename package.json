@@ -5,6 +5,8 @@
     "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets"
   },
   "dependencies": {
+    "chart.js": "^3.9.1",
+    "chartkick": "^4.2.0",
     "esbuild": "^0.15.5"
   }
 }

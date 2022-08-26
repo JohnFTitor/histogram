@@ -1,3 +1,6 @@
 class HistogramController < ApplicationController
-  def index; end
+  def index
+    path = "public/some.txt"
+    @data = Text.generate_word_count(File.read(path))
+  end
 end
