@@ -1,24 +1,92 @@
-# README
+![](https://img.shields.io/static/v1?label=BY&message=JohnFTitor&color=blue)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Histogram App
 
-Things you may want to cover:
+> This is a simple Histogram application that allows users to generate grahp bars based on the count of words of either a text file or a text area  
 
-* Ruby version
+## Screenshot
 
-* System dependencies
+![App screenshot](./page_screenshot.png)
 
-* Configuration
+### Requirements
+In order to work on this project, you need to have the following dependencies installed: 
 
-* Database creation
+- [Ruby](https://www.ruby-lang.org/en/) 
+- [Postgresql](https://www.postgresql.org/)
+- [Node.js](https://nodejs.org/en/)
+- [Yarn](https://yarnpkg.com/)
+- [Rails](https://rubyonrails.org/)
 
-* Database initialization
+## Built With
 
-* How to run the test suite
+- Languages: _**Ruby**_
+- Frameworks: _**Ruby On Rails**_
+- Technologies used: _**Visual Studio Code**_
 
-* Services (job queues, cache servers, search engines, etc.)
+## Getting Started
 
-* Deployment instructions
+### Clone this repository
 
-* ...
+```bash
+$ git clone git@github.com:JohnFTitor/histogram.git
+$ cd histogram
+```
+
+### Commands to run
+
+Run 
+```bash
+$ bundle install 
+```
+
+To get all the gems required for the project
+
+Then, run
+
+```bash
+$ npm install 
+```
+To install packages such esbuild and chartkirt
+
+To check linters locally, use
+```bash
+$ rubocop .
+```
+
+Once you have the project correctly set up, run 
+```bash
+$ bin/rails db:create
+```
+
+To generate the database for this project and work without any issue. Please review the requirements listed above   
+
+Important note: Since this project uses SCSS for the styling, you need to run: 
+
+```bash
+$ ./bin/dev
+```
+
+For you to see the styling being applied in the browser during development
+
+It's really important to check the console where you run bin/dev, since it is there where the values of the cycles will be printed
+
+If you have any issue setting up this project, don't hesitate to contact me with any link below
+
+## Authors
+
+:bust_in_silhouette: **Andrés Felipe Arroyave Naranjo**
+
+ Platform | Badge |
+ --- | --- |
+ **PortFolio**    | [JohnFTitor](https://johnftitor.me/)
+ **GitHub**    | [@JohnFTitor](https://github.com/JohnFTitor)
+ **Twitter**   | [@johnftitor](https://twitter.com/johnftitor)
+ **LinkedIn**  | [Andres](https://www.linkedin.com/in/andresarroyavenaranjo/?locale=en_US)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+## Show your support
+
+Give a ⭐️ if you like this project!
