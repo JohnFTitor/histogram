@@ -3,7 +3,15 @@
     <%= f.label :text %>
     <%= f.text_area :text, rows: "14" %>
   </div>
-  <%= f.submit 'Generate graph' %>
+  <%= f.submit 'Generate graph from text' %>
+<% end %>
+
+<%= form_with url: histogram_index_path, method: :post do |f| %>
+  <div>
+    <%= f.label :file %>
+    <%= f.file_field :file, accept: 'text/plain' %>
+  </div>
+  <%= f.submit 'Generate graph from file' %>
 <% end %>
 
 <% if data.length > 0 %>

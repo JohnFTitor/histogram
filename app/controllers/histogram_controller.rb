@@ -16,6 +16,13 @@ class HistogramController < ApplicationController
   private
 
   def histogram_params
-    params.permit(:text)
+    params.permit(:text, :file)
+    if (params[:file])
+      if File.exists?(params[:file])
+        path = params[:file].tempfile.to_path.to_s
+        params[:text] = File.read(path)
+      end
+    end
+    params
   end
 end
